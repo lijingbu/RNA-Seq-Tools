@@ -12,8 +12,13 @@ Add these pseudo reads to the paired end reads accordingly, you will get paired 
 previousely single reads in one file. 
 
 ```
-pseudoFastqMate.pl single_read1.fastq 1 pseudo_single_read2.fastq
+pseudoFastqMate.pl single_read1.fastq 1 single_read2.fastq
 ```
+Where the __single_read2.fastq__ is the pseudo mate reads of __single_read1.fastq__. 
+Then you can add single_read1.fastq and single_read2.fastq to your pair end reads correspondingly. 
+Most of the mapping programs will ignore the poly Ns in the read sequences. 
+You analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
+Enjoy. 
 
 ###Example single read:
 <pre>
