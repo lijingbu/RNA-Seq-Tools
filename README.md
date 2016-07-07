@@ -26,6 +26,8 @@ Then you get new paired reads contain sequences of the same order:
 1. the original paired reads 
 2. the single read 1 
 3. the single read 2 
+
+
 for both forward reads and reverse reads. 
 
 The number __1__ indicates the input file is read 1. The pseudo mate sequence header will have /2 added to the end.
