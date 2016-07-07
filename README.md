@@ -2,17 +2,19 @@
 
 ## A solution to merge paired and single end reads
 One big issue of RNASeq analysis is to deal with both paired and single end reads. 
-Most of the programs won't deal both at the same time. 
+Most of the mapping/counting programs won't deal both at the same time. 
 The __pseudo mate reads__ may be able to trick the program as if they were all paired end reads.
 Simply generate pseudo mate reads using the same length of Ns, and the same scores.
 Add these pseudo reads to the paired end reads accordingly, you will get paired end reads and 
-previousely single reads in one file. 
+previousely single reads in one file. Most of the mapping programs will ignore the poly Ns in the read sequences. 
+Your analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
 
 
 This tool **pseudoFastqMate.pl** will create pseudo mate reads for given single read fastq.
-Each pseudo mate reads have the same length of poly Ns and the same quality score of the given single read mate.
+Pseudo mate read will be generated using Ns only. Each has the same read length as its mate read.
+The read quality score is also copied from its single read mate.
 
-E.g. I have paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq
+For example, I have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq
 ```
 pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
 pseudoFastqMate.pl single_2.fastq 2 pseudo_mate_1.fastq
@@ -26,9 +28,6 @@ The number __1__ indicates the input file is read 1. The pseudo mate sequence he
 When use __2__, it assumes the input file is read 2. The pseudo mate sequence header will have /1 added to the end.
 
 
-Most of the mapping programs will ignore the poly Ns in the read sequences. 
-Your analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
-Enjoy. 
 
 ###Example single read:
 <pre>
