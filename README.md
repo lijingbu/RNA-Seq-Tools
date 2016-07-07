@@ -22,7 +22,10 @@ cat paired_2.fastq pseudo_mate_2.fastq single_2.fastq > new_paired_2.fastq
 ```
 Then you get new paired reads contain sequences of the same order. 
 
-The number __1__ indicates the input file is read 1. 
+The number __1__ indicates the input file is read 1. The pseudo mate sequence header will have /1 added to the end.
+When use __2__, it assumes the input file is read 2. The pseudo mate sequence header will have /2 added to the end.
+
+
 Most of the mapping programs will ignore the poly Ns in the read sequences. 
 Your analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
 Enjoy. 
