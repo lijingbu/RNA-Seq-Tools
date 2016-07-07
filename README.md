@@ -11,9 +11,9 @@ Simply generate pseudo mate reads using the same length of Ns, and the same scor
 Add these pseudo reads to the paired end reads accordingly, you will get paired end reads and 
 previousely single reads in one file. 
 
-'''
+```
 pseudoFastqMate.pl single_read1.fastq 1 pseudo_single_read2.fastq
-'''
+```
 
 ###Example single read:
 <pre>
