@@ -23,10 +23,9 @@ cat paired_1.fastq single_1.fastq pseudo_mate_1.fastq > new_paired_1.fastq
 cat paired_2.fastq pseudo_mate_2.fastq single_2.fastq > new_paired_2.fastq
 ```
 Then you get new paired reads contain sequences of the same order:   
-1. the original paired reads 
-2. the single read 1 
-3. the single read 2 
-
+1.  the original paired reads 
+2.  the single read 1 
+3.  the single read 2 
 
 for both forward reads and reverse reads. 
 
