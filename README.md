@@ -12,15 +12,19 @@ previousely single reads in one file.
 This tool **pseudoFastqMate.pl** will create pseudo mate reads for given single read fastq.
 Each pseudo mate reads have the same length of poly Ns and the same quality score of the given single read mate.
 
+E.g. I have paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq
+```
+pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
+pseudoFastqMate.pl single_2.fastq 2 pseudo_mate_1.fastq
 
+cat paired_1.fastq single_1.fastq pseudo_mate_1.fastq > new_paired_1.fastq
+cat paired_2.fastq pseudo_mate_2.fastq single_2.fastq > new_paired_2.fastq
 ```
-pseudoFastqMate.pl single_read_1.fastq 1 single_read_2.fastq
-```
-Where the __single_read_2.fastq__ is the pseudo mate reads of __single_read_1.fastq__. 
-The number 1 indicates the input file is read 1. If the input file is read 2, use 2 instead. 
-Then you can add single_read_1.fastq and single_read_2.fastq to your pair end reads correspondingly. 
+Then you get new paired reads contain sequences of the same order. 
+
+The number __1__ indicates the input file is read 1. 
 Most of the mapping programs will ignore the poly Ns in the read sequences. 
-You analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
+Your analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
 Enjoy. 
 
 ###Example single read:
