@@ -14,10 +14,11 @@ Each pseudo mate reads have the same length of poly Ns and the same quality scor
 
 
 ```
-pseudoFastqMate.pl single_read1.fastq 1 single_read2.fastq
+pseudoFastqMate.pl single_read_1.fastq 1 single_read_2.fastq
 ```
-Where the __single_read2.fastq__ is the pseudo mate reads of __single_read1.fastq__. 
-Then you can add single_read1.fastq and single_read2.fastq to your pair end reads correspondingly. 
+Where the __single_read_2.fastq__ is the pseudo mate reads of __single_read_1.fastq__. 
+The number 1 indicates the input file is read 1. If the input file is read 2, use 2 instead. 
+Then you can add single_read_1.fastq and single_read_2.fastq to your pair end reads correspondingly. 
 Most of the mapping programs will ignore the poly Ns in the read sequences. 
 You analysis on these sequences will include all the pair and single reads information and appear as paired end sequences.
 Enjoy. 
