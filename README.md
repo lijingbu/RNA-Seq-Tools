@@ -22,7 +22,10 @@ pseudoFastqMate.pl single_2.fastq 2 pseudo_mate_1.fastq
 cat paired_1.fastq single_1.fastq pseudo_mate_1.fastq > new_paired_1.fastq
 cat paired_2.fastq pseudo_mate_2.fastq single_2.fastq > new_paired_2.fastq
 ```
-Then you get new paired reads contain sequences of the same order: the original paired reads, the single read 1, then the single read 2 for both forward reads and reverse reads. 
+Then you get new paired reads contain sequences of the same order: 
+1. the original paired reads, 
+2. the single read 1, 
+3. then the single read 2 for both forward reads and reverse reads. 
 
 The number __1__ indicates the input file is read 1. The pseudo mate sequence header will have /2 added to the end.
 When use __2__, it assumes the input file is read 2. The pseudo mate sequence header will have /1 added to the end.
