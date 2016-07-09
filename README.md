@@ -14,6 +14,41 @@ This tool **pseudoFastqMate.pl** will create pseudo mate reads for given single 
 Pseudo mate read will be generated using Ns only. Each has the same read length as its mate read.
 The read quality score is also copied from its single read mate.
 
+If your sequences looks like 
+<pre>
+@NIKITA:1008:C3E8HACXX:2:2208:19186:36716 1:N::0:GTGGCC
+CATTAATGCAACAAAGTTTATCGTG  
++
+@?@DDDDD?>CFHBC>FBIHA?AA:  
+@NIKITA:1008:C3E8HACXX:2:2211:8302:63655 1:N::0:GTGGCC  
+GTCATCTATGCAAAACATTTTTTTTCNT  
++
+CC@FFFFDDHGDDFHGEGGGIJIIE9#0  
+@NIKITA:1008:C3E8HACXX:2:2114:2632:58265 1:N::0:GTGGCC
+CTGCCCTTTAATTTTTTTTTTTGGTG  
+</pre>
+
+Please use command 
+```
+sed -i.bak 's/ 1:N.*/\/1/' single_1.fastq
+sed -i.bak 's/ 2:N.*/\/2/' single_2.fastq
+```
+
+to conver the reads to the following format
+
+<pre>
+@NIKITA:1008:C3E8HACXX:2:2208:19186:36716/1  
+CATTAATGCAACAAAGTTTATCGTG  
++
+@?@DDDDD?>CFHBC>FBIHA?AA:  
+@NIKITA:1008:C3E8HACXX:2:2211:8302:63655/1  
+GTCATCTATGCAAAACATTTTTTTTCNT  
++
+CC@FFFFDDHGDDFHGEGGGIJIIE9#0  
+@NIKITA:1008:C3E8HACXX:2:2114:2632:58265/1  
+CTGCCCTTTAATTTTTTTTTTTGGTG  
+</pre>
+
 For example, I have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq
 ```
 pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
