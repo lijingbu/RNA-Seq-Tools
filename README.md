@@ -49,7 +49,8 @@ CC@FFFFDDHGDDFHGEGGGIJIIE9#0
 CTGCCCTTTAATTTTTTTTTTTGGTG  
 </pre>
 
-For example, I have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq
+##Usage example
+We have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq, want to merge to 2 files: new_paired_1.fastq and new_paired_2.fastq
 ```
 pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
 pseudoFastqMate.pl single_2.fastq 2 pseudo_mate_1.fastq
