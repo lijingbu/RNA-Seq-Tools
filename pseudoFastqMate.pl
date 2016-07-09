@@ -3,7 +3,7 @@
 my $usage = "single read mate";
 my @inputParameters = split /\s+/, $usage;
 $usage_warning = $0;    $usage_warning =~ s/.*\\//; $usage_warning =~ s/.*\///;
-my $usage_warning = "\n Usage: perl $usage_warning <".(join "> <", @inputParameters).">\n
+my $usage_warning = "\n Usage: $usage_warning <".(join "> <", @inputParameters).">\n
 Example: $0 single_read1.fastq 1 single_read2.fastq\n";
 unless ( $#inputParameters == $#ARGV )  { die $usage_warning };
 for (my $para_counts=0;$para_counts<=$#inputParameters;$para_counts++){ ${$inputParameters[$para_counts]} = $ARGV[$para_counts];        }
