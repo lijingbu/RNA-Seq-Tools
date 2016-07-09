@@ -14,6 +14,7 @@ This tool **pseudoFastqMate.pl** will create pseudo mate reads for given single 
 Pseudo mate read will be generated using Ns only. Each has the same read length as its mate read.
 The read quality score is also copied from its single read mate.
 
+### Warning
 If your sequences looks like 
 <pre>
 @NIKITA:1008:C3E8HACXX:2:2208:19186:36716 1:N::0:GTGGCC
@@ -49,8 +50,8 @@ CC@FFFFDDHGDDFHGEGGGIJIIE9#0
 CTGCCCTTTAATTTTTTTTTTTGGTG  
 </pre>
 
-##Usage example
-We have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq, want to merge to 2 files: new_paired_1.fastq and new_paired_2.fastq
+##Example
+We have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq, merge to 2 files: new_paired_1.fastq and new_paired_2.fastq
 ```
 pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
 pseudoFastqMate.pl single_2.fastq 2 pseudo_mate_1.fastq
