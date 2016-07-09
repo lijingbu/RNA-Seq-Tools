@@ -18,9 +18,9 @@ open in, "$single" or die "$single $!\n";
 open out, ">$mate" or die "$mate $!\n";
 while (my $line = <in>){
         chomp $line;
-        if ($line =~ /(@\S+) $read:/){
-                $line = "$1/$read";    
-        }
+#        if ($line =~ /(@\S+) $read:/){
+#                $line = "$1/$read";    
+#        }
         if ($line =~ /(@\S+\/)$read$/){
                 $id = $1;
                 $mateid = $id.$materead;
