@@ -1,9 +1,7 @@
 # RNA-Seq-Tools
 
 ## A solution to merge paired and single end reads
-One big issue of RNASeq analysis is to deal with both paired and single end reads. 
-Most of the mapping/counting programs won't deal both at the same time. 
-The __pseudo mate reads__ may be able to trick the program as if they were all paired end reads.
+One big issue of RNASeq analysis is to deal with both paired and single end reads that passed trimming/filtering QC step. Most of the mapping/counting programs won't deal both at the same time. Ignoring those single reads and only use the paired reads is a easy way to deal with the situation. But it risk losing useful information in the single reads. The __pseudo mate reads__ may be able to trick the program as if they were all paired end reads.
 Simply generate pseudo mate reads using the same length of Ns, and the same scores.
 Add these pseudo reads to the paired end reads accordingly, you will get paired end reads and 
 previousely single reads in one file. Most of the mapping programs will ignore the poly Ns in the read sequences. 
