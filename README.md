@@ -50,7 +50,7 @@ CC@FFFFDDHGDDFHGEGGGIJIIE9#0
 CTGCCCTTTAATTTTTTTTTTTGGTG  
 </pre>
 
-##Example
+## Example
 We have 4 files: paired_1.fastq, paired_2.fastq, single_1.fastq, single_2.fastq, merge to 2 files: new_paired_1.fastq and new_paired_2.fastq
 ```
 pseudoFastqMate.pl single_1.fastq 1 pseudo_mate_2.fastq
@@ -71,7 +71,7 @@ When use __2__, it assumes the input file is read 2. The pseudo mate sequence he
 
 
 
-###Example single read:
+### Example single read:
 <pre>
 @NIKITA:1008:C3E8HACXX:2:2208:19186:36716/1  
 CATTAATGCAACAAAGTTTATCGTG  
@@ -84,7 +84,7 @@ CC@FFFFDDHGDDFHGEGGGIJIIE9#0
 @NIKITA:1008:C3E8HACXX:2:2114:2632:58265/1  
 CTGCCCTTTAATTTTTTTTTTTGGTG  
 </pre>
-###Generated pseudo mate reads:
+### Generated pseudo mate reads:
 <pre>
 @NIKITA:1008:C3E8HACXX:2:2208:19186:36716/2
 NNNNNNNNNNNNNNNNNNNNNNNNN
@@ -96,4 +96,14 @@ NNNNNNNNNNNNNNNNNNNNNNNNNNNN
 CC@FFFFDDHGDDFHGEGGGIJIIE9#0
 @NIKITA:1008:C3E8HACXX:2:2114:2632:58265/2
 NNNNNNNNNNNNNNNNNNNNNNNNNN
+</pre>
+
+### The Ns will not affect the mapping nor the reads counting
+<pre>
+NIKITA:1008:C3E8HACXX:2:2316:6604:36112 77      *       0       0       *       *       0       0       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       ++1=BD;:2A<+CB<EFEH<DHC<EB?CE991?9?FHGD6D:FG9DHII       YT:Z:UP YF:Z:NS
+NIKITA:1008:C3E8HACXX:2:2316:6604:36112 141     *       0       0       *       *       0       0       GACACTGCAAAGATTTCATTTGGGGATTAGGAATACAGGGAGTACAATG       ++1=BD;:2A<+CB<EFEH<DHC<EB?CE991?9?FHGD6D:FG9DHII       YT:Z:UP
+NIKITA:1008:C3E8HACXX:2:2316:8084:36031 77      *       0       0       *       *       0       0       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN        ?=?D??8BDF7FD?CCFGBCHEH<2AFGG@9:)?FH9?DGCFH<@B;=        YT:Z:UP YF:Z:NS
+NIKITA:1008:C3E8HACXX:2:2316:8084:36031 141     *       0       0       *       *       0       0       TACAACACAACCTGCTCAAATCACATTGGACGAACAATGGAACGAGTG        ?=?D??8BDF7FD?CCFGBCHEH<2AFGG@9:)?FH9?DGCFH<@B;=        YT:Z:UP
+NIKITA:1008:C3E8HACXX:2:2316:12311:36074        77      *       0       0       *       *       0       0       NNNNNNNNNNNNNNNNNNNNNNNNNNNN    BB8+4ADBFH3?AGGI<F<:C3A+A+):    YT:Z:UP YF:Z:NS
+NIKITA:1008:C3E8HACXX:2:2316:12311:36074        141     *       0       0       *       *       0       0       CAACCATCCCTAGTCAGAACACCAACCC    BB8+4ADBFH3?AGGI<F<:C3A+A+):    YT:Z:UP
 </pre>
